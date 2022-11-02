@@ -1,0 +1,113 @@
+/* FONTS */
+@font-face {
+  font-family: 'Sans';
+  src: url(fonts/Cortese-Sans.ttf);
+}
+
+@font-face {
+  font-family: 'Lettering';
+  src: url(fonts/MeineMutterLetteringGX.ttf);
+}
+
+/* GENERAL */
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+
+  color: orchid;
+  background-color: orchid;
+  font-size: 5.5vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* LAYOUT */
+/* LEFT: FIXED TEXT (MEINE MUTTER) */
+.fixed {
+  /* positioning */
+  width: 42%; /* if you change this, also change the padding-left of .scroll  */
+  height: 100%;
+  position: fixed;
+
+  /* font */
+  font-family: Lettering;
+  font-variation-settings: 'wght' 100;
+  transition: font-variation-settings 0.3s ease, transform 0.3s ease 1s;
+
+  mix-blend-mode: difference;
+
+  /* center the text inside */
+  margin-top: 50vh;
+  text-align: right;
+  padding-right: 0.4em;
+}
+
+/* RIGHT: SCROLLABLE TEXT ON THE RIGHT SIDE */
+.scroll {
+  /* positioning */
+  margin-left: 42%; /* if you change this, also change the width of .fixed  */
+
+  overflow: scroll;
+  mix-blend-mode: difference;
+
+  /* font */
+  font-family: Sans;
+}
+
+/* RIGHT: POEM PARAGRAPHS INSIDE RIGHT COLUMNS */
+p {
+  height: 100vh;
+  /* border: 1px solid orchid; */
+  margin: 0;
+}
+
+p:first-child {
+  margin-top: 50vh; /* change here at which height the first paragraph begins */
+  /* margin-top: 100vh; */
+}
+
+p:last-child {
+  height: 50vh; /* to make the last paragraph end in the middle */
+  margin-bottom: 0;
+}
+
+/* FONT VARIATIONS */
+/* classes for different font-variations accoring to paragraph*/
+/* classes are assigned to #meine-mutter via JS on scroll */
+.font-variation_paragraph-1 {
+  font-variation-settings: 'wght' 100;
+}
+.font-variation_paragraph-2 {
+  font-variation-settings: 'wght' 150;
+}
+.font-variation_paragraph-3 {
+  font-variation-settings: 'wght' 200;
+}
+.font-variation_paragraph-4 {
+  font-variation-settings: 'wght' 250;
+}
+.font-variation_paragraph-5 {
+  font-variation-settings: 'wght' 300;
+}
+.font-variation_paragraph-6 {
+  font-variation-settings: 'wght' 400;
+}
+.font-variation_paragraph-7 {
+  font-variation-settings: 'wght' 450;
+}
+.font-variation_paragraph-8 {
+  font-variation-settings: 'wght' 500;
+}
+
+/* OUT ANIMATION */
+/* class for translating #deine-mutter out of the viewport */
+/* will be added when last paragraph appears */
+.animate-out {
+  transform: translateY(-100vh);
+}
