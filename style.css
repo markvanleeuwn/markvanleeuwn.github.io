@@ -17,8 +17,8 @@ html {
 body {
   margin: 0;
   height: 800vh;
-  color: white;
-  background-color: white;
+  color: grey;
+  background-color: grey;
   font-size: clamp(47px, 5.5vw, 120px);
 }
 
