@@ -1,3 +1,5 @@
+
+
 // from Stackoverflow “How to check if element is visible after scrolling?” – https://stackoverflow.com/questions/487073/how-to-check-if-element-is-visible-after-scrolling
 function isScrolledIntoView(el) {
   var rect = el.getBoundingClientRect();
@@ -10,6 +12,8 @@ function isScrolledIntoView(el) {
   // var isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
   return isVisible;
 }
+
+
 
 // get poem paragraphs by id
 const paragraph1 = document.getElementById('paragraph-1');
@@ -81,10 +85,15 @@ document.addEventListener('scroll', function () {
   // paragraph 8
   if (isScrolledIntoView(paragraph8)) {
     meineMutter.classList.add('font-variation_paragraph-8');
-    meineMutter.classList.add('animate-out');
+    // meineMutter.classList.add('pos-change');
+    // meineMutter.classList.add('animate-out');
+
     // console.log('out: paragraph8')
   } else {
     meineMutter.classList.remove('font-variation_paragraph-8');
-    meineMutter.classList.remove('animate-out');
+    // meineMutter.classList.remove('pos-change');
+    // meineMutter.classList.remove('animate-out');
+    
   }
+
 });

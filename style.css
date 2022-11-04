@@ -16,11 +16,10 @@ html {
 
 body {
   margin: 0;
-  height: 100%;
-
-  color: orchid;
-  background-color: orchid;
-  font-size: 5.5vw;
+  height: 800vh;
+  color: white;
+  background-color: white;
+  font-size: clamp(47px, 5.5vw, 120px);
 }
 
 * {
@@ -31,19 +30,20 @@ body {
 /* LEFT: FIXED TEXT (MEINE MUTTER) */
 .fixed {
   /* positioning */
-  width: 42%; /* if you change this, also change the padding-left of .scroll  */
+  width: 38.2%; /* if you change this, also change the padding-left of .scroll  */
+  margin-left: 0;
   height: 100%;
   position: fixed;
 
   /* font */
   font-family: Lettering;
   font-variation-settings: 'wght' 100;
-  transition: font-variation-settings 0.3s ease, transform 0.3s ease 1s;
+  transition: font-variation-settings 0.3s ease;
 
   mix-blend-mode: difference;
 
   /* center the text inside */
-  margin-top: 50vh;
+  margin-top: 38.2vh;
   text-align: right;
   padding-right: 0.4em;
 }
@@ -51,30 +51,77 @@ body {
 /* RIGHT: SCROLLABLE TEXT ON THE RIGHT SIDE */
 .scroll {
   /* positioning */
-  margin-left: 42%; /* if you change this, also change the width of .fixed  */
-
+  margin-left: 38.2%; /* if you change this, also change the width of .fixed  */
+  margin-right: 9%;
+  bottom:0;
   overflow: scroll;
   mix-blend-mode: difference;
 
-  /* font */
-  font-family: Sans;
 }
 
 /* RIGHT: POEM PARAGRAPHS INSIDE RIGHT COLUMNS */
 p {
+  /* font */
+  font-family: Sans;
+
   height: 100vh;
-  /* border: 1px solid orchid; */
+  /* border: 2px solid orchid;  */
   margin: 0;
 }
 
 p:first-child {
-  margin-top: 50vh; /* change here at which height the first paragraph begins */
+  margin-top: 38.2vh; /* change here at which height the first paragraph begins */
   /* margin-top: 100vh; */
 }
 
 p:last-child {
-  height: 50vh; /* to make the last paragraph end in the middle */
+  height: 61.8vh; /* to make the last paragraph end in the middle */
   margin-bottom: 0;
+}
+
+.info {
+  width: 100%;
+  padding-left: 38.2%;
+  font-family: "HelveticaNeue-Light";
+  letter-spacing: 0.015em;
+  font-size: clamp(18px, 0.2em, 23px);
+  padding-right: 9%;
+  mix-blend-mode: difference;
+  /* background-color: yellow; */
+}
+
+div:first-child {
+  position: absolute;
+  padding-top: 20px;
+  /* height: 597px;
+  background-color: yellow; */
+}
+
+div:nth-child(4) {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .fixed {
+    width: 100%;
+    text-align: left;
+    margin-left: 9%;
+  }
+  
+  .scroll {
+    margin-left: 9%;
+  }
+
+  .info {
+    padding-left: 9%;
+  }
+
+  p:first-child {
+    margin-top: calc(38.2vh + 60px);
+  }
+  
 }
 
 /* FONT VARIATIONS */
@@ -84,30 +131,34 @@ p:last-child {
   font-variation-settings: 'wght' 100;
 }
 .font-variation_paragraph-2 {
-  font-variation-settings: 'wght' 150;
+  font-variation-settings: 'wght' 125;
 }
 .font-variation_paragraph-3 {
-  font-variation-settings: 'wght' 200;
+  font-variation-settings: 'wght' 175;
 }
 .font-variation_paragraph-4 {
   font-variation-settings: 'wght' 250;
 }
 .font-variation_paragraph-5 {
-  font-variation-settings: 'wght' 300;
+  font-variation-settings: 'wght' 350;
 }
 .font-variation_paragraph-6 {
-  font-variation-settings: 'wght' 400;
+  font-variation-settings: 'wght' 500;
 }
 .font-variation_paragraph-7 {
-  font-variation-settings: 'wght' 450;
+  font-variation-settings: 'wght' 700;
 }
 .font-variation_paragraph-8 {
-  font-variation-settings: 'wght' 500;
+  font-variation-settings: 'wght' 800;
 }
 
 /* OUT ANIMATION */
 /* class for translating #deine-mutter out of the viewport */
 /* will be added when last paragraph appears */
-.animate-out {
+/* .animate-out {
   transform: translateY(-100vh);
-}
+} */
+/* 
+.pos-change {
+  position: absolute;
+} */
